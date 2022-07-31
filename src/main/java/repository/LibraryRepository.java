@@ -73,7 +73,6 @@ public class LibraryRepository {
         }catch (SQLException e){
             System.out.println("Error: " + e.getClass() + e.getMessage());
         }
-
         return false;
     }
 
@@ -202,7 +201,6 @@ public class LibraryRepository {
         return reader;
     }
 
-
     public ArrayList<Book> listBorrowedBooks(int id) {
 
         try{
@@ -239,7 +237,6 @@ public class LibraryRepository {
         return 0;
     }
 
-
     public int checkIfNotSecondExemplar(int id, int readerID) {
         try{
             String query = "SELECT COUNT(*) FROM library_management.borrowedbooks where libraryId="+ id + " and readerId="+readerID;
@@ -253,7 +250,6 @@ public class LibraryRepository {
         }
         return 1;
     }
-
 
     public void closeOpenConnections() {
         try{

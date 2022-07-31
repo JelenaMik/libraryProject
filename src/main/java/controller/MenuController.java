@@ -28,7 +28,6 @@ public class MenuController {
                     7. Return book
                     8. Exit
                     """
-
         );
     }
     private void handleUserChoice(){
@@ -48,6 +47,7 @@ public class MenuController {
                 readerController.displayAllReaders();
                 break;
             case "5":
+                libraryController.displayAllBooks();
                 System.out.println(libraryController.borrowBook());
                 break;
             case "6":

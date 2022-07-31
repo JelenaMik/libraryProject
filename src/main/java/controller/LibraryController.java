@@ -64,12 +64,9 @@ public class LibraryController {
     public void displayAllBooks() {
         try{
             ArrayList<Book> bookList = libraryRepository.getAllBooksFromDB();
-            bookList.forEach(System.out::println);
-
+           //bookList.forEach(System.out::println);
             String[] col = {"id", "bookName", "author", "issn", "year", "genre"};
-
             DefaultTableModel tableModel = new DefaultTableModel(col, 0);
-
             bookList.forEach( book -> tableModel.addRow(
                             new String[]{
                                     String.valueOf(book.getId()),
@@ -90,13 +87,9 @@ public class LibraryController {
 
     private void displayTable(DefaultTableModel tableModel){
         JTable table = new JTable(tableModel);
-
-
         frame.setLayout(new BorderLayout());
         frame.setSize(600, 600);
-
         frame.add(new JScrollPane(table), BorderLayout.CENTER);
-
         frame.setVisible(true);
     }
 
